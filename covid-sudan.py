@@ -31,81 +31,63 @@ if g==1:
 	url=("https://www.worldometers.info/coronavirus/country/sudan/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[7:9]
+	f= page.find('div', class_='maincounter-number').text
 elif g==2:
 	url=("https://www.worldometers.info/coronavirus/country/uk/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[8:10]
+	f= page.find('div', class_='maincounter-number').text
 elif g==3:
 	url=("https://www.worldometers.info/coronavirus/country/egypt/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[7:9]
+	f= page.find('div', class_='maincounter-number').text
 elif g==4:
 	url=("https://www.worldometers.info/coronavirus/country/us/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[8:10]
+	f= page.find('div', class_='maincounter-number').text
 elif g==5:
 	url=("https://www.worldometers.info/coronavirus/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	l[1]="cases"
-	l[2]="worldwide : "
-	del l[12:14]
+	f= page.find('div', class_='maincounter-number').text
 elif g==6:
 	url=("https://www.worldometers.info/coronavirus/country/united-arab-emirates/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[9:11]
+	f= page.find('div', class_='maincounter-number').text
 elif g==7:
 	url=("https://www.worldometers.info/coronavirus/country/saudi-arabia/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[8:10]
+	f= page.find('div', class_='maincounter-number').text
 elif g==8:
 	url=("https://www.worldometers.info/coronavirus/country/qatar/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[7:9]
+	f= page.find('div', class_='maincounter-number').text
 elif g==9:
 	url=("https://www.worldometers.info/coronavirus/country/yemen/")
 	
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[7:9]
+	f= page.find('div', class_='maincounter-number').text
 elif g==10:
 	url=("https://www.worldometers.info/coronavirus/country/china/")
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	f=((page.title).get_text())
-	l=f.split()
-	del l[7:9]
+	f= page.find('div', class_='maincounter-number').text
 	
 	
 	
 print("\n")
+country=url[50:]
+country=country.replace("/","")
 
-print(" ".join(l))
+
+print(f"There is currently {f} covid cases in {country} ")
+
 print("""
 ╭╮╱╱╭┳━━━╮
 ┃╰╮╭╯┃╭━╮┃
