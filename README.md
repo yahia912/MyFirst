@@ -1,1 +1,1 @@
-This includes my python projects when I was 14 years old
+This includes my first ever python projects.
