@@ -52,7 +52,7 @@ while True:
 		url="https://www.weather-atlas.com/en/sudan/Al-Fashir"
 	elif city=="15":
 		url="https://www.weather-atlas.com/en/sudan/Suakin"
-		
+	
 	elif "x" in city or "X"in city:
 		print("""
 ╭━━╮╱╱╱╱╱╱╱╱╱╱╭━━━╮
@@ -72,15 +72,10 @@ while True:
 	
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
-	p=page.find("li", {"class":"font_175_rem"}).get_text(strip=True)
-	a=page.find("span",{"class":"font_175_rem strong"}).get_text(strip=True)
-	ur=url.split("/")
-	del ur[0:5]
-	for i in ur:
-				if "-" in i:
-					i=i.replace("-"," ")
-				u=i
-				print("it's %s in %s (%s)"%(p,u,a))
+	weather= page.find('li', class_='fs-2').text
+	state=page.find('span', class_='fs-3 fw-bold').text
+	place=url[39:]
+	print(f"it is {weather} in {place}({state})")
 					
 		
 	
