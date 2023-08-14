@@ -37,6 +37,7 @@ elif g==2:
 	rq=get(url)
 	page=soup(rq.content,"html.parser")
 	f= page.find('div', class_='maincounter-number').text
+	url=("https://www.worldometers.info/coronavirus/country/the uk/")
 elif g==3:
 	url=("https://www.worldometers.info/coronavirus/country/egypt/")
 	rq=get(url)
@@ -84,9 +85,12 @@ elif g==10:
 print("\n")
 country=url[50:]
 country=country.replace("/","")
+f=f.strip()
 
 
-print(f"There is currently {f} covid cases in {country} ")
+
+sentence=(f"There is currently {f} covid cases in {country}")
+print(sentence)
 
 print("""
 ╭╮╱╱╭┳━━━╮
