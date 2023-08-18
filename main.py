@@ -1,7 +1,7 @@
-from typing import Final
+
 from pip import main
-TOKEN: Final = "912206126:AAEIdZo_1jyNzfea9smjfWrB-L2o-pYeNHo"
-USER: Final= "@Y7yabot"    
+TOKEN= "912206126:AAEIdZo_1jyNzfea9smjfWrB-L2o-pYeNHo"
+USER= "@Y7yabot"    
 from telegram import Update
 from telegram.ext import Application, MessageHandler, CommandHandler, filters, ContextTypes  
 
