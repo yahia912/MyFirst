@@ -22,7 +22,7 @@ def handle_responses(text: str) ->str:
         from requests import get
         from bs4 import BeautifulSoup as soup
         url="https://www.weather-atlas.com/en/sudan/khartoum"
-        rq=get(url)
+        rq = get(url, proxies={})
         page=soup(rq.content,"html.parser")
         weather= page.find('li', class_='fs-2').text
         return(f"it is {weather} in khartoum")
